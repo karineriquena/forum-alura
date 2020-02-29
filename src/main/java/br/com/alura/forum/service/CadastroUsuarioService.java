@@ -12,12 +12,17 @@ import br.com.alura.forum.model.Usuario;
 public class CadastroUsuarioService {
 
 	@Autowired
+	public CadastroUsuarioService(UsuarioDao usuarioDao, PerfilDao perfilDao, Md5Service md5) {
+		super();
+		this.usuarioDao = usuarioDao;
+		this.perfilDao = perfilDao;
+		this.md5 = md5;
+	}
+
 	private UsuarioDao usuarioDao;
 	
-	@Autowired
 	private PerfilDao perfilDao;
 	
-	@Autowired
 	private Md5Service md5;
 	
 	@Transactional
