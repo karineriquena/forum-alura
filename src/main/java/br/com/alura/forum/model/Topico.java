@@ -68,8 +68,11 @@ public class Topico {
 	}
 	
 	public void marcarComoSolucionado() {
+		if (this.respostas.isEmpty()) {
+			throw new IllegalStateException("Um tópico não pode ser marcado como solucionado quando não tem respostas");
+		}
 		this.status = StatusTopico.SOLUCIONADO;
-		atualizarDataDeUltimaAtualizacao();
+		atualizarDataDeUltimaAtualizacao();			
 	}
 
 	public void fechar() {

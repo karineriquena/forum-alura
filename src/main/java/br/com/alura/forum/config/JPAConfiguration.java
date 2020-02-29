@@ -31,7 +31,7 @@ public class JPAConfiguration {
 	}
 
 	/* DATASOURCE DE DESENVOLVIMENTO */ 
-	/*@Bean
+	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
@@ -39,10 +39,10 @@ public class JPAConfiguration {
 		dataSource.setUsername("root");
 		dataSource.setPassword("");
 		return dataSource;
-	}*/
+	}
 
 	/* DATASOURCE DE PRODUCAO*/
-	@Bean
+	/*@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
@@ -50,7 +50,7 @@ public class JPAConfiguration {
 		dataSource.setUsername("alura");
 		dataSource.setPassword("qwerty123");
 		return dataSource;
-	}
+	}*/
 	
 	@Bean
 	public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
