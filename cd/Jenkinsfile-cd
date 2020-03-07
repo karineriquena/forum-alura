@@ -4,8 +4,8 @@ pipeline {
    stages {
       stage('Build & Test') {
          steps {
-            git 'git@github.com:karineriquena/forum-alura.git'
-
+            git 'https://716b5cc180d0302508ccb815a982397863d93b25@github.com/karineriquena/forum-alura.git'
+            
             sh "mvn clean package"
             
             sh 'chmod 400 infra/ssh-keys/id_rsa'
