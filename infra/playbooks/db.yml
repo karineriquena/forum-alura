@@ -1,0 +1,25 @@
+- hosts: all
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  tasks:
+  - name: Update apt
+    become: yes
+    apt:
+      update_cache: yes
+  - name: Install MySQL
+    become: yes
+    apt:
+      name: mysql-server
+      state: present
+  - name: Copia o arquivo de configuracao do MySQL
+    become: yes
+    copy:
+      src: ../db/mysqld.cnf
+      dest: /etc/mysql/mysql.conf.d/mysql.cnf
+      owner: root
+      group: root
+  - name: Restart MySQL
+    become: yes
+    service:
+      name: mysql
+      state: restarted
