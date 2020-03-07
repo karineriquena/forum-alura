@@ -11,7 +11,14 @@
     apt:
       name: mysql-server
       state: present
-  - name: Copia o arquivo de configuracao do MySQL
+  - name: Copy MySQL initial script to VM
+    copy:
+      src: ../db/script.sql
+      dest: /home/vagrant/script.sql
+  - name: Creates MySQL user, database and tables
+    become: yes
+    shell: mysql -u root < /home/vagrant/script.sql
+  - name: Configure MySQL network
     become: yes
     copy:
       src: ../db/mysqld.cnf
