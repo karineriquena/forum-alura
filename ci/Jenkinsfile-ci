@@ -1,0 +1,21 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('Build & Test') {
+         steps {
+            git 'git@github.com:karineriquena/forum-alura.git'
+            sh "mvn clean test"
+         }
+
+        // post {
+        //    always {
+        //       junit '**/target/surefire-reports/TEST-*.xml'
+        //    }
+        //    success {
+        //       archiveArtifacts 'target/*.jar'
+        //    }
+        // }
+      }
+   }
+}
