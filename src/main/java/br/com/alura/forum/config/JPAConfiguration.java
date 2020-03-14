@@ -19,7 +19,7 @@ public class JPAConfiguration {
 
 	private static final String DEFAULT_URL = "jdbc:mysql://localhost:3306/alura_forum?useSSL=false";
 	private static final String DEFAULT_USER = "root";
-	private static final String DEFAULT_PASSWORD = "";
+	private static final String DEFAULT_PASSWORD = "toor";
 	
 	@Bean
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
